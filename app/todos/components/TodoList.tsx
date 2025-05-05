@@ -18,6 +18,7 @@ export default function TodoList({ initialTodos }: Props) {
   const [inputTask, setInput] = useState("");
 
   //State to edit a todo
+  //null if no todo is being edited
   const [editingTodo, setEditingTodo] = useState<string | null>(null);
 
   //Add or Edit a Todo (in input)
@@ -42,15 +43,18 @@ export default function TodoList({ initialTodos }: Props) {
       //spread syntax to add new todo
       setTodos([...todos, newTodo]);
     }
-
+    //clear the input
     setInput("");
   }
 
   //Start Editing a Todo Function
   function startEdit(todoId: string) {
+    //find todo with specified ID
     const todoToEdit = todos.find((todo) => todo.id === todoId);
     if (todoToEdit) {
+      //put todos title into input box
       setInput(todoToEdit.title);
+      //store ID of edited todo
       setEditingTodo(todoId);
     }
   }

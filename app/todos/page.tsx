@@ -36,7 +36,7 @@ export default async function Page() {
 
   return (
     <div>
-      {/*If errorMessage is true, display an error message */}
+      {/*If errorMessage is true, display an error message. conditional rendering */}
       {errorMessage ? (
         <div>Failed to load initial todos.</div>
       ) : (
