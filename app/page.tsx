@@ -20,6 +20,7 @@ export default async function Page() {
 
   //Use try... catch block to fetch data
   try {
+    //fetch list of todos
     const response = await fetch("https://jsonplaceholder.typicode.com/todos");
     //check if the response.ok is true, if not, throw an error
     if (!response.ok) {

@@ -1,16 +1,18 @@
-"use client";
+"use client"; //client component, runs in browser and uses hooks like useState
 
 import React, { useState } from "react";
 import { Todo } from "../lib/types";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid"; //for unique IDs, changed the id to a string (wouldnt work otherwise)
 
 //Define the props for TodoList to accept initialTodos: Todo[]
 type Props = {
   initialTodos: Todo[];
 };
 
+//defines TodoList component, intitialTodos as props
 export default function TodoList({ initialTodos }: Props) {
-  //Initialize state called todos and input field(initialTodos)
+  //Initialize state variable called todos (the list of todos)
+  //and input field(initialTodos)
   //setTodos is the state updating function
   const [todos, setTodos] = useState<Todo[]>(initialTodos);
 
